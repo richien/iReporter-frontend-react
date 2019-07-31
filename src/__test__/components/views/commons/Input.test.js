@@ -19,7 +19,7 @@ function renderInput(args) {
   return shallow(<Input {...props} />);
 }
 
-describe('LoginFormContainer', () => {
+describe('Input', () => {
   it('should match snapshot', () => {
     const wrapper = renderInput();
     expect(wrapper).toMatchSnapshot();
