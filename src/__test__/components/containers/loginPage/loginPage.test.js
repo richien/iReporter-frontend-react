@@ -4,12 +4,10 @@ import { LoginPage, mapStateToProps } from '../../../../components/containers/lo
 
 describe('LoginPage', () => {
   const defaultProps = {
-    loginAction: {
-      loginAction: () =>
-        new Promise(resolve => {
-          resolve('Successfully logged in');
-        })
-    },
+    loginAction: () =>
+      new Promise(resolve => {
+        resolve('Successfully logged in');
+      }),
     history: {}
   };
 
@@ -46,5 +44,20 @@ describe('LoginPage', () => {
     wrapperInstance.onChangeHandler(event);
 
     expect(wrapperInstance.onChangeHandler).toBeCalled();
+  });
+
+  it('should handle submit successfully', () => {
+    wrapper.setState({
+      user: {
+        username: 'james',
+        password: 'efdfvsfv'
+      }
+    });
+    const wrapperInstance = wrapper.instance();
+    const event = { preventDefault: jest.fn() };
+    jest.spyOn(wrapperInstance, 'onSubmitHandler');
+    wrapperInstance.onSubmitHandler(event);
+
+    expect(wrapperInstance.onSubmitHandler).toBeCalled();
   });
 });

@@ -1,18 +1,18 @@
-import { login } from '../../actions/types';
+import { signUp } from '../../actions/types';
 
 const initialState = {
   data: {},
   error: {}
 };
 
-export default function loginReducer(state = initialState, action) {
+export default function signUpReducer(state = initialState, action) {
   switch (action.type) {
-    case login.LOGIN_SUCCESS:
+    case signUp.SIGNUP_SUCCESS:
       return {
         ...state,
         data: action.data
       };
-    case login.LOGIN_FAILURE:
+    case signUp.SIGNUP_FAILURE:
       return {
         ...state,
         error: action.error

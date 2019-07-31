@@ -13,10 +13,11 @@ describe('loginApi', () => {
     moxios.wait(() => {
       const mockRequest = moxios.requests.mostRecent();
       mockRequest.respondWith({
-        status: 200,
-        data: {
+        response: {
           data: {
-            data: [{ access_token: 'sadcsdcasdcasdcasc', user: {} }]
+            data: {
+              data: [{ access_token: 'sadcsdcasdcasdcasc', user: {}, status: 200 }]
+            }
           }
         }
       });
@@ -28,7 +29,7 @@ describe('loginApi', () => {
       }
     };
     return login(user).then(response => {
-      expect(response.status).toEqual(200);
+      expect(response.data.data[0].status).toEqual(200);
     });
   });
 
@@ -37,7 +38,9 @@ describe('loginApi', () => {
       const mockRequest = moxios.requests.mostRecent();
       mockRequest.respondWith({
         status: 401,
-        error: 'Request failed with status code 401'
+        response: {
+          error: 'Request failed with status code 401'
+        }
       });
     });
     const user = {
@@ -47,7 +50,7 @@ describe('loginApi', () => {
       }
     };
     return login(user).catch(error => {
-      expect(error).toEqual(new Error('Request failed with status code 401'));
+      expect(error).toEqual('Request failed with status code 401');
     });
   });
 });

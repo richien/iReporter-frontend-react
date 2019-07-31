@@ -18,8 +18,8 @@ export function doLogin(user) {
       .login(user)
       .then(data => {
         const loggedIn = true;
-        sessionStorage.setItem('access_token', data.data.data[0].access_token);
-        sessionStorage.setItem('user', data.data.data[0].user);
+        sessionStorage.setItem('access_token', data[0].access_token);
+        sessionStorage.setItem('user', JSON.stringify(data[0].user));
         sessionStorage.setItem('isLoggedIn', loggedIn);
         dispatch(loginSuccess(data));
       })

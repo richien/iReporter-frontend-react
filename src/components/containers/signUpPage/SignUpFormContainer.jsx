@@ -4,7 +4,15 @@ import Loader from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
 import Input from '../../views/commons/Input';
 
-const LoginFormContainer = ({ username, password, onChangeHandler, onSubmitHandler, loading }) => (
+const SignUpFormContainer = ({
+  username,
+  password1,
+  password2,
+  email,
+  onChangeHandler,
+  onSubmitHandler,
+  loading
+}) => (
   <div className="card">
     <h2 className="card-header info-color white-text text-center py-4">
       <strong>iReporter</strong>
@@ -24,16 +32,39 @@ const LoginFormContainer = ({ username, password, onChangeHandler, onSubmitHandl
           onChangeHandler={onChangeHandler}
           required
         />
-
+        <Input
+          type="email"
+          id="materialLoginFormEmail"
+          name="email"
+          inputClassName="form-control"
+          divClassName="md-form"
+          label="materialLoginFormEmail"
+          text="Email"
+          value={email}
+          onChangeHandler={onChangeHandler}
+          required
+        />
         <Input
           type="password"
-          name="password"
+          name="password1"
           id="materialLoginFormPassword"
           inputClassName="form-control"
           divClassName="md-form"
           label="materialLoginFormPassword"
           text="Password"
-          value={password}
+          value={password1}
+          onChangeHandler={onChangeHandler}
+          required
+        />
+        <Input
+          type="password"
+          name="password2"
+          id="materialLoginFormPassword"
+          inputClassName="form-control"
+          divClassName="md-form"
+          label="materialLoginFormPassword"
+          text="confirm Password"
+          value={password2}
           onChangeHandler={onChangeHandler}
           required
         />
@@ -42,28 +73,34 @@ const LoginFormContainer = ({ username, password, onChangeHandler, onSubmitHandl
           type="submit"
           disabled={loading}
         >
-          {loading ? <Loader type="Puff" color="cornflowerblue" height="20" width="20" /> : 'Login'}
+          {loading ? (
+            <Loader type="Puff" color="cornflowerblue" height="20" width="20" />
+          ) : (
+            'Register'
+          )}
         </button>
         <p>
-          Not a member?
+          Already have an account?
           {''}
-          <Link to="/signup"> Register</Link>
+          <Link to="/login"> Login </Link>
         </p>
       </form>
     </div>
   </div>
 );
 
-LoginFormContainer.propTypes = {
+SignUpFormContainer.propTypes = {
   username: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
+  password1: PropTypes.string.isRequired,
+  password2: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
   onChangeHandler: PropTypes.func.isRequired,
   onSubmitHandler: PropTypes.func.isRequired,
   loading: PropTypes.bool
 };
 
-LoginFormContainer.defaultProps = {
+SignUpFormContainer.defaultProps = {
   loading: false
 };
 
-export default LoginFormContainer;
+export default SignUpFormContainer;
