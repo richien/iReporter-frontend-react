@@ -1,0 +1,63 @@
+.peach-gradient {
+  background: -webkit-linear-gradient(50deg, lavender, lavender) !important;
+  background: -o-linear-gradient(50deg, lavender, lavender) !important;
+  background: linear-gradient(40deg, lavender, lavender) !important;
+}
+
+.rgba-stylish-strong {
+  background: none;
+  height: 100vh;
+}
+a.btn.peach-gradient {
+  color: cornflowerblue;
+}
+
+a.btn.peach-gradient:hover {
+  color: lightgrey;
+}
+
+p.card-text.landing {
+  color: lavender;
+  font-size: xx-large;
+  padding: 3rem;
+}
+
+h5.h5.lavender-text {
+  color: lavender !important;
+  font-size: -webkit-xxx-large;
+}
+
+h2.card-title.h2.my-4.py-2.landing {
+  color: lavender !important;
+}
+
+.footer-copyright.text-center.py-3 {
+  background: lavender;
+  color: cornflowerblue;
+  position: fixed;
+  height: 3rem;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+div.navbar {
+  background: lavender;
+}
+
+a.navbar-brand {
+  font-weight: 900;
+}
+
+a.navbar-brand:hover {
+  color: lightgray;
+}
+
+.grey.lighten-4 {
+  background-color: lavender !important;
+}
+
+.nav-link:hover {
+  color: lightgray;
+}
