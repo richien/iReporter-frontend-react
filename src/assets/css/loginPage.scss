@@ -1,5 +1,17 @@
+a {
+  color: cornflowerblue;
+}
+
+a:hover {
+    color: lavender;
+}
+
+p {
+    color: darkslategray;
+}
+
 div.container div.row.login-wrapper {
-  margin-top: 5em;
+  margin-top: 15em;
   margin-bottom: 5em;
 }
 .info-color {
