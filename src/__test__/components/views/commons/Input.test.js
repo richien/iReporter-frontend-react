@@ -6,8 +6,8 @@ function renderInput(args) {
   const defaultProps = {
     label: '',
     text: '',
-    divClassName: jest.fn(),
-    inputClassName: jest.fn(),
+    divClassName: 'form-control',
+    inputClassName: 'field',
     type: '',
     id: '',
     name: '',

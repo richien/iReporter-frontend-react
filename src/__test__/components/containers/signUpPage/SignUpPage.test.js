@@ -11,7 +11,12 @@ describe('SignUpPage', () => {
       new Promise(resolve => {
         resolve({ data: {} });
       }),
-    history: { push: jest.fn() }
+    history: { push: jest.fn() },
+    username: '',
+    password1: '',
+    password2: '',
+    onChangeHandler: jest.fn(),
+    onSubmitHandler: jest.fn()
   };
 
   const wrapper = shallow(<SignUpPage {...defaultProps} />);

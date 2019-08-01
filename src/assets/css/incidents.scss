@@ -1,0 +1,44 @@
+div#errors {
+  margin-top: 20%;
+  text-align: center;
+}
+
+div#loading {
+  color: cornflowerblue;
+  padding: 20rem;
+  text-align: center;
+}
+
+#recent-redflags {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: cornflowerblue;
+}
+
+#recent-redflags.col-lg-10.col-md-12 h2 {
+  font-weight: 200;
+}
+
+div#redflag.card {
+  margin-bottom: 2rem;
+  overflow-y: scroll;
+}
+
+h4#rf-title.card-title {
+  color: cornflowerblue;
+  text-align: center;
+}
+
+div.col-lg-3.rf-header-lower small {
+  color: darkgray;
+}
+
+p#rf-comment.card-text {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+div.container.wrapper {
+  margin-bottom: 5rem;
+}
