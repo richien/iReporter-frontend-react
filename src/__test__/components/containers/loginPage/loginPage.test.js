@@ -8,7 +8,11 @@ describe('LoginPage', () => {
       new Promise(resolve => {
         resolve('Successfully logged in');
       }),
-    history: {}
+    history: {},
+    username: '',
+    password: '',
+    onChangeHandler: jest.fn(),
+    onSubmitHandler: jest.fn()
   };
 
   const wrapper = shallow(<LoginPage {...defaultProps} />);
