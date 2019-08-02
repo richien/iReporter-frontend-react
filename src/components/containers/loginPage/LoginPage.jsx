@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 import { doLogin } from '../../../actions/login/loginActions';
 import LoginFormContainer from './LoginFormContainer';
+import UnAuthenticated from '../../../routes/UnAuthenticated';
 
 export class LoginPage extends Component {
   state = {
@@ -83,4 +84,4 @@ export function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   { loginAction: doLogin }
-)(LoginPage);
+)(UnAuthenticated(LoginPage));
