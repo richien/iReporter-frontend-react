@@ -42,7 +42,7 @@ export class NavBar extends Component {
               <>
                 <li className="nav-item">
                   <a className="nav-link" href="incidents">
-                    Incidents
+                    Redflags
                   </a>
                 </li>
                 <li className="nav-item">

@@ -33,8 +33,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      // 'process.env.API_DOMAIN': JSON.stringify('https://irepo-api.herokuapp.com')
-      'process.env.API_DOMAIN': JSON.stringify('http://127.0.0.1:5000')
+      'process.env.API_DOMAIN': JSON.stringify('https://irepo-api.herokuapp.com')
+      // 'process.env.API_DOMAIN': JSON.stringify('http://127.0.0.1:5000')
     }),
     new HtmlWebPackPlugin({
       template: './public/index.html',
